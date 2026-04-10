@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliette Cahard | English Linguistics</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap');
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            /* Softer warm background */
+            background-color: #F4F2EC; 
+            color: #2F3E46;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            /* Soft off-white for the main card */
+            background: #FDFBF7; 
+            border-radius: 8px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+            /* Dark teal accent */
+            border-top: 4px solid #0F4C5C; 
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            /* Title matching the teal accent */
+            color: #0F4C5C; 
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: #5C6B73;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4A5A62;
+            margin-bottom: 30px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            /* Dark teal button */
+            background-color: #0F4C5C; 
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            /* Darker teal for hover state */
+            background-color: #0A3641; 
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #E2DFD8;
+            margin: 30px 0;
+        }
+
+        /* Language Toggle Button Styles */
+        .lang-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: 2px solid #0F4C5C;
+            color: #0F4C5C;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-toggle:hover {
+            background-color: #0F4C5C;
+            color: #FDFBF7;
+        }
+
+        /* Language visibility rules */
+        body.lang-en .fr { display: none; }
+        body.lang-fr .en { display: none; }
+    </style>
+</head>
+
+<body class="lang-en">
+
+    <button id="langToggle" class="lang-toggle">FR</button>
+
+    <div class="container">
+        <h1>Juliette Cahard</h1>
+        
+        <h2 class="en">PhD Candidate in English Linguistics</h2>
+        <h2 class="fr">Doctorante en Linguistique Anglaise</h2>
+
+        <div class="divider"></div>
+
+        <p class="en">Welcome. My academic portfolio and research website is currently under construction.</p>
+        <p class="fr">Bienvenue. Mon site académique et de recherche est actuellement en construction.</p>
+
+        <a href="" class="contact-btn en">Come back soon</a>
+        <a href="" class="contact-btn fr">Revenez bientôt</a>
+    </div>
+
+    <script>
+        const langToggle = document.getElementById('langToggle');
+        
+        langToggle.addEventListener('click', () => {
+            const body = document.body;
+            if (body.classList.contains('lang-en')) {
+                // Switch to French
+                body.classList.replace('lang-en', 'lang-fr');
+                langToggle.textContent = 'EN';
+            } else {
+                // Switch to English
+                body.classList.replace('lang-fr', 'lang-en');
+                langToggle.textContent = 'FR';
+            }
+        });
+    </script>
+</body>
+
+</html>
