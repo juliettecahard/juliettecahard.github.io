@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ressources | Juliette Cahard</title>
+
+    <link href="./style.css" rel="stylesheet">
+    <link href="./enhance.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-academic {
+            font-family: 'Lora', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-patternbg bg-cover bg-center bg-fixed text-neutral-900 flex flex-col min-h-screen">
+
+    <header class="bg-zinc-50 border-b border-neutral-300">
+        <div class="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center relative">
+            <a href="index.html"
+                class="text-2xl font-academic font-bold text-neutral-900 tracking-tight hover:text-teal-600 transition-colors">
+                Juliette Cahard
+            </a>
+            <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="index.html" class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">Accueil</a>
+                <a href="recherche.html"
+                    class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">Recherche</a>
+                <a href="enseignement.html"
+                    class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">Enseignement</a>
+                <a href="ressources.html" class="text-teal-600 border-b-2 border-teal-600 pb-1"
+                    aria-current="page">Ressources</a>
+                <a href="cv.html" class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">CV</a>
+            </nav>
+
+            <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
+
+            <nav id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile">
+                <a href="index.html">Accueil</a>
+                <a href="recherche.html">Recherche</a>
+                <a href="enseignement.html">Enseignement</a>
+                <a href="ressources.html" class="is-active" aria-current="page">Ressources</a>
+                <a href="cv.html">CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-16 w-full flex flex-col gap-10">
+
+        <div class="border-b border-neutral-300 pb-6 reveal-up">
+            <h1 class="text-5xl md:text-6xl text-teal-600 italic font-medium font-academic tracking-tight">
+                Ressources
+            </h1>
+            <p class="text-neutral-600 text-lg leading-relaxed mt-4 max-w-2xl">
+                Vidéos, billets et documents de travail.
+            </p>
+        </div>
+
+        <!-- BARRE DE FILTRES -->
+        <div class="res-filters reveal-up d-1">
+            <div class="res-filter-group" role="group" aria-label="Filtrer par type">
+                <span class="res-filter-label" aria-hidden="true">Type</span>
+                <button type="button" class="res-chip" data-filter="type" data-value="all"
+                    aria-pressed="true">Tout</button>
+                <button type="button" class="res-chip" data-filter="type" data-value="video" aria-pressed="false">
+                    <span class="material-symbols-outlined" aria-hidden="true">smart_display</span>Vidéos</button>
+                <button type="button" class="res-chip" data-filter="type" data-value="billet" aria-pressed="false">
+                    <span class="material-symbols-outlined" aria-hidden="true">edit_note</span>Billets</button>
+                <button type="button" class="res-chip" data-filter="type" data-value="document" aria-pressed="false">
+                    <span class="material-symbols-outlined" aria-hidden="true">description</span>Documents</button>
+            </div>
+            <div class="res-filter-group" role="group" aria-label="Filtrer par public">
+                <span class="res-filter-label" aria-hidden="true">Public</span>
+                <button type="button" class="res-chip" data-filter="public" data-value="all"
+                    aria-pressed="true">Tous</button>
+                <button type="button" class="res-chip" data-filter="public" data-value="etudiants"
+                    aria-pressed="false">Étudiant·es</button>
+                <button type="button" class="res-chip" data-filter="public" data-value="recherche"
+                    aria-pressed="false">Recherche</button>
+            </div>
+            <p class="res-count" id="res-count" aria-live="polite"></p>
+        </div>
+
+        <!-- FLUX DE RESSOURCES
+             L'ordre dans le HTML n'a pas d'importance : le script trie par data-date (AAAA-MM-JJ), du plus récent au plus ancien.
+             data-type     : video | billet | document
+             data-audience : etudiants | recherche | "etudiants recherche"
+        -->
+        <section class="res-grid reveal-up d-2" id="res-grid" aria-label="Ressources">
+
+            <!-- ===== VIDÉO À LA UNE, AVEC CHAPITRES =====
+                 Identifiant YouTube : t5U2tQBh_Ec (3 occurrences).
+                 Les chapitres : data-t = départ en secondes. -->
+            <article class="res-card res-feature panel bg-zinc-50 border border-neutral-200 shadow-xl" data-type="video"
+                data-audience="etudiants recherche" data-date="2026-11-06">
+                <div class="res-feature-grid">
+                    <div class="res-feature-main">
+                        <div class="res-media">
+                            <button type="button" class="res-video" data-provider="youtube" data-id="t5U2tQBh_Ec"
+                                data-title="Atelier Sketch Engine" aria-label="Lire la vidéo : Atelier Sketch Engine">
+                                <img src="https://i.ytimg.com/vi/t5U2tQBh_Ec/hqdefault.jpg" alt="" loading="lazy"
+                                    onerror="this.remove()">
+                                <span class="res-play" aria-hidden="true"><span
+                                        class="material-symbols-outlined">play_arrow</span></span>
+                            </button>
+                        </div>
+                        <div class="res-body">
+                            <div class="res-meta">
+                                <span class="res-type res-type-video"><span class="material-symbols-outlined"
+                                        aria-hidden="true">smart_display</span>Vidéo</span>
+                                <time datetime="2026-11-06">6 novembre 2026</time>
+                                <span>· 1 h 30</span>
+                            </div>
+                            <h2 class="res-title font-academic">Atelier de formation à Sketch Engine</h2>
+                            <p class="res-excerpt">Atelier proposé aux membres de l'ALAES : Prise en main approfondie de
+                                Sketch Engine (débutant.es et confirmé.es) centrée sur Word Sketch, Word Sketch
+                                Difference et le concordancier, traitement des données sous Excel,
+                                calcul des fréquences relatives et test de significativité statistique entre corpus
+                                (valeur <i>p</i>).</p>
+                            <div class="res-footer">
+                                <div class="res-audiences"><span class="res-audience">Étudiant·es</span><span
+                                        class="res-audience">Recherche</span></div>
+                                <a class="res-action" href="https://www.youtube.com/watch?v=t5U2tQBh_Ec" target="_blank"
+                                    rel="noopener">
+                                    YouTube<span class="material-symbols-outlined"
+                                        aria-hidden="true">open_in_new</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="res-chapters" aria-label="Chapitres de la vidéo">
+                        <div class="chap-panel">
+                            <button type="button" class="chap-toggle" aria-expanded="false"
+                                aria-controls="chap-scroll-1">
+                                <span class="material-symbols-outlined" aria-hidden="true">format_list_bulleted</span>
+                                Chapitres
+                                <span class="material-symbols-outlined chap-chev" aria-hidden="true">expand_more</span>
+                            </button>
+                            <div class="chap-scroll" id="chap-scroll-1">
+                                <p class="chap-hint">Cliquez sur un timestamp pour lancer la vidéo à ce passage.</p>
+                                <ol class="chap-list">
+                                    <li>
+                                        <button type="button" class="chap-item" data-t="4"><span
+                                                class="chap-time">0:04</span><span class="chap-label">Introduction de
+                                                l'atelier</span></button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="chap-item" data-t="100"><span
+                                                class="chap-time">1:40</span><span class="chap-label">Remarques
+                                                générales sur Sketch Engine</span></button>
+                                    </li>
+                                    <li class="chap-group">
+                                        <div class="chap-row">
+                                            <button type="button" class="chap-item" data-t="179"><span
+                                                    class="chap-time">2:59</span><span
+                                                    class="chap-label">Corpus</span></button>
+                                            <button type="button" class="chap-expand" aria-expanded="false"
+                                                aria-controls="chap-g1" aria-label="Sous-parties : Corpus"><span
+                                                    class="material-symbols-outlined"
+                                                    aria-hidden="true">expand_more</span></button>
+                                        </div>
+                                        <ol class="chap-sub" id="chap-g1" hidden>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="179"><span
+                                                        class="chap-time">2:59</span><span class="chap-label">Corpus
+                                                        spécialisés</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="298"><span
+                                                        class="chap-time">4:58</span><span class="chap-label">Corpus
+                                                        généraux</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="463"><span
+                                                        class="chap-time">7:43</span><span
+                                                        class="chap-label">Téléchargement de son propre
+                                                        corpus</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="657"><span
+                                                        class="chap-time">10:57</span><span class="chap-label">Création
+                                                        de sous-corpus</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="957"><span
+                                                        class="chap-time">15:57</span><span class="chap-label">Création
+                                                        de corpus (recherche web, URLs et recherche
+                                                        website)</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="1241"><span
+                                                        class="chap-time">20:41</span><span class="chap-label">Partage
+                                                        de corpus entre usagers</span></button>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li class="chap-group">
+                                        <div class="chap-row">
+                                            <button type="button" class="chap-item" data-t="1326"><span
+                                                    class="chap-time">22:06</span><span class="chap-label">Word
+                                                    Sketch</span></button>
+                                            <button type="button" class="chap-expand" aria-expanded="false"
+                                                aria-controls="chap-g2" aria-label="Sous-parties : Word Sketch"><span
+                                                    class="material-symbols-outlined"
+                                                    aria-hidden="true">expand_more</span></button>
+                                        </div>
+                                        <ol class="chap-sub" id="chap-g2" hidden>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="1326"><span
+                                                        class="chap-time">22:06</span><span class="chap-label">Word
+                                                        Sketch</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="1556"><span
+                                                        class="chap-time">25:56</span><span class="chap-label">Word
+                                                        Sketch Difference</span></button>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li class="chap-group">
+                                        <div class="chap-row">
+                                            <button type="button" class="chap-item" data-t="1816"><span
+                                                    class="chap-time">30:16</span><span
+                                                    class="chap-label">Concordancier</span></button>
+                                            <button type="button" class="chap-expand" aria-expanded="false"
+                                                aria-controls="chap-g3" aria-label="Sous-parties : Concordancier"><span
+                                                    class="material-symbols-outlined"
+                                                    aria-hidden="true">expand_more</span></button>
+                                        </div>
+                                        <ol class="chap-sub" id="chap-g3" hidden>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="1848"><span
+                                                        class="chap-time">30:48</span><span class="chap-label">Simple
+                                                        (avec *, pipe et --)</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="2135"><span
+                                                        class="chap-time">35:35</span><span class="chap-label">Lemma
+                                                        (avec case cochée ou décochée)</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="2278"><span
+                                                        class="chap-time">37:58</span><span class="chap-label">Phrase
+                                                        (avec case cochée ou décochée et différence avec
+                                                        lemma)</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="2301"><span
+                                                        class="chap-time">38:21</span><span
+                                                        class="chap-label">Word</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="2318"><span
+                                                        class="chap-time">38:38</span><span
+                                                        class="chap-label">Character</span></button>
+                                            </li>
+                                            <li class="chap-group">
+                                                <div class="chap-row">
+                                                    <button type="button" class="chap-item" data-t="2348"><span
+                                                            class="chap-time">39:08</span><span
+                                                            class="chap-label">CQL</span></button>
+                                                    <button type="button" class="chap-expand" aria-expanded="false"
+                                                        aria-controls="chap-g4" aria-label="Sous-parties : CQL"><span
+                                                            class="material-symbols-outlined"
+                                                            aria-hidden="true">expand_more</span></button>
+                                                </div>
+                                                <ol class="chap-sub" id="chap-g4" hidden>
+                                                    <li>
+                                                        <button type="button" class="chap-item" data-t="2348"><span
+                                                                class="chap-time">39:08</span><span
+                                                                class="chap-label">Base</span></button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" class="chap-item" data-t="2449"><span
+                                                                class="chap-time">40:49</span><span
+                                                                class="chap-label">Distinction entre word et
+                                                                lc</span></button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" class="chap-item" data-t="2484"><span
+                                                                class="chap-time">41:24</span><span
+                                                                class="chap-label">Tags (avec SENT, particularité de IN
+                                                                et DT)</span></button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" class="chap-item" data-t="2619"><span
+                                                                class="chap-time">43:39</span><span
+                                                                class="chap-label">!=, |, ?, &amp;</span></button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" class="chap-item" data-t="2936"><span
+                                                                class="chap-time">48:56</span><span
+                                                                class="chap-label">Un token indéfini [ ] et [ ]{0,5},
+                                                                anaphore textuelle stricte et autres utilisations des
+                                                                accolades</span></button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" class="chap-item" data-t="3176"><span
+                                                                class="chap-time">52:56</span><span
+                                                                class="chap-label">Ponctuation</span></button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" class="chap-item" data-t="3320"><span
+                                                                class="chap-time">55:20</span><span
+                                                                class="chap-label">Within et containing</span></button>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="3653"><span
+                                                        class="chap-time">1:00:53</span><span class="chap-label">Sort,
+                                                        frequency, filtre et random sample</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="3914"><span
+                                                        class="chap-time">1:05:14</span><span class="chap-label">Système
+                                                        d'annotation de Sketch Engine</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="4114"><span
+                                                        class="chap-time">1:08:34</span><span
+                                                        class="chap-label">Extraction des données</span></button>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li class="chap-group">
+                                        <div class="chap-row">
+                                            <button type="button" class="chap-item" data-t="4384"><span
+                                                    class="chap-time">1:13:04</span><span
+                                                    class="chap-label">Excel</span></button>
+                                            <button type="button" class="chap-expand" aria-expanded="false"
+                                                aria-controls="chap-g5" aria-label="Sous-parties : Excel"><span
+                                                    class="material-symbols-outlined"
+                                                    aria-hidden="true">expand_more</span></button>
+                                        </div>
+                                        <ol class="chap-sub" id="chap-g5" hidden>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="4384"><span
+                                                        class="chap-time">1:13:04</span><span class="chap-label">Rendre
+                                                        son document Excel le plus lisible possible</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="4494"><span
+                                                        class="chap-time">1:14:54</span><span
+                                                        class="chap-label">Surlignage, nettoyage des doublons et
+                                                        fonction tri</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="4745"><span
+                                                        class="chap-time">1:19:05</span><span class="chap-label">Créer
+                                                        un tableau, annoter et filtrer</span></button>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li class="chap-group">
+                                        <div class="chap-row">
+                                            <button type="button" class="chap-item" data-t="4959"><span
+                                                    class="chap-time">1:22:39</span><span class="chap-label">Fréquence
+                                                    relative et valeur <i>p</i></span></button>
+                                            <button type="button" class="chap-expand" aria-expanded="false"
+                                                aria-controls="chap-g6"
+                                                aria-label="Sous-parties : Fréquence relative et valeur p"><span
+                                                    class="material-symbols-outlined"
+                                                    aria-hidden="true">expand_more</span></button>
+                                        </div>
+                                        <ol class="chap-sub" id="chap-g6" hidden>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="4959"><span
+                                                        class="chap-time">1:22:39</span><span
+                                                        class="chap-label">Fréquence brute et fréquence
+                                                        relative</span></button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="chap-item" data-t="5127"><span
+                                                        class="chap-time">1:25:27</span><span
+                                                        class="chap-label">Significance test (valeur <i>p</i>) sur <span
+                                                            class="chap-url">corpora.lancs.ac.uk/sigtest</span></span></button>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- MODÈLES DE CARTES (non affichés) : copier une carte dans la section ci-dessus pour l'utiliser -->
+        <template id="res-modeles">
+
+            <!-- ===== VIDÉO (EXEMPLE — remplacer VIDEO_ID, titre, date, texte) =====
+                 YouTube : data-provider="youtube" data-id="identifiant après watch?v="
+                 Vimeo   : data-provider="vimeo"   data-id="identifiant numérique" + mettre une image locale dans <img src>
+            -->
+            <article class="res-card panel bg-zinc-50 border border-neutral-200 shadow-xl" data-type="video"
+                data-audience="etudiants" data-date="2026-10-14">
+                <div class="res-media">
+                    <button type="button" class="res-video" data-provider="youtube" data-id="VIDEO_ID"
+                        data-title="Introduction au travail sur corpus"
+                        aria-label="Lire la vidéo : Introduction au travail sur corpus">
+                        <img src="https://i.ytimg.com/vi/VIDEO_ID/hqdefault.jpg" alt="" loading="lazy"
+                            onerror="this.remove()">
+                        <span class="res-play" aria-hidden="true"><span
+                                class="material-symbols-outlined">play_arrow</span></span>
+                    </button>
+                </div>
+                <div class="res-body">
+                    <div class="res-meta">
+                        <span class="res-type res-type-video"><span class="material-symbols-outlined"
+                                aria-hidden="true">smart_display</span>Vidéo</span>
+                        <time datetime="2026-10-14">14 octobre 2026</time>
+                    </div>
+                    <h2 class="res-title font-academic">Introduction au travail sur corpus</h2>
+                    <p class="res-excerpt">Courte description de la vidéo : contenu, durée, prérequis éventuels.</p>
+                    <div class="res-footer">
+                        <div class="res-audiences"><span class="res-audience">Étudiant·es</span></div>
+                        <a class="res-action" href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank"
+                            rel="noopener">
+                            YouTube<span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== DOCUMENT PDF HÉBERGÉ (EXEMPLE — déposer le fichier dans docs/) ===== -->
+            <article class="res-card panel bg-zinc-50 border border-neutral-200 shadow-xl" data-type="document"
+                data-audience="etudiants recherche" data-date="2026-11-06">
+                <div class="res-media res-media-doc" aria-hidden="true">
+                    <span class="material-symbols-outlined res-media-icon">picture_as_pdf</span>
+                    <span class="res-media-format">PDF · 2,4 Mo</span>
+                </div>
+                <div class="res-body">
+                    <div class="res-meta">
+                        <span class="res-type res-type-document"><span class="material-symbols-outlined"
+                                aria-hidden="true">description</span>Document</span>
+                        <time datetime="2026-11-06">6 novembre 2026</time>
+                    </div>
+                    <h2 class="res-title font-academic">
+                        <a class="res-stretch" href="docs/atelier-sketch-engine-2026.pdf">Atelier Sketch Engine :
+                            support de formation</a>
+                    </h2>
+                    <p class="res-excerpt">Word Sketch, concordancier, création de sous-corpus, requêtes CQL, calcul de
+                        la fréquence relative et de la valeur <i>p</i>.</p>
+                    <div class="res-footer">
+                        <div class="res-audiences"><span class="res-audience">Étudiant·es</span><span
+                                class="res-audience">Recherche</span></div>
+                        <a class="res-action" href="docs/atelier-sketch-engine-2026.pdf" download>
+                            Télécharger<span class="material-symbols-outlined" aria-hidden="true">download</span></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== BILLET (EXEMPLE — dupliquer billets/modele-billet.html) ===== -->
+            <article class="res-card panel bg-zinc-50 border border-neutral-200 shadow-xl" data-type="billet"
+                data-audience="recherche" data-date="2026-09-20">
+                <div class="res-media res-media-billet" aria-hidden="true">
+                    <!-- Optionnel : remplacer l'icône par <img src="billets/img/couverture.jpg" alt=""> -->
+                    <span class="material-symbols-outlined res-media-icon">edit_note</span>
+                </div>
+                <div class="res-body">
+                    <div class="res-meta">
+                        <span class="res-type res-type-billet"><span class="material-symbols-outlined"
+                                aria-hidden="true">edit_note</span>Billet</span>
+                        <time datetime="2026-09-20">20 septembre 2026</time>
+                    </div>
+                    <h2 class="res-title font-academic">
+                        <a class="res-stretch" href="billets/modele-billet.html">Titre du billet</a>
+                    </h2>
+                    <p class="res-excerpt">Chapeau du billet en deux ou trois lignes, qui donne envie de lire la suite.
+                    </p>
+                    <div class="res-footer">
+                        <div class="res-audiences"><span class="res-audience">Recherche</span></div>
+                        <a class="res-action" href="billets/modele-billet.html" tabindex="-1" aria-hidden="true">
+                            Lire<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== DOCUMENT EXTERNE (HAL) ===== -->
+            <article class="res-card panel bg-zinc-50 border border-neutral-200 shadow-xl" data-type="document"
+                data-audience="recherche" data-date="2024-06-01">
+                <div class="res-media res-media-doc" aria-hidden="true">
+                    <span class="material-symbols-outlined res-media-icon">article</span>
+                    <span class="res-media-format">Article · HAL</span>
+                </div>
+                <div class="res-body">
+                    <div class="res-meta">
+                        <span class="res-type res-type-document"><span class="material-symbols-outlined"
+                                aria-hidden="true">description</span>Document</span>
+                        <time datetime="2024">2024</time>
+                    </div>
+                    <h2 class="res-title font-academic">
+                        <a class="res-stretch" href="https://hal.science/hal-04588012v1" target="_blank"
+                            rel="noopener">The notion of ‘head’ in the description of the English language: assessment
+                            of the semantic and morphosyntactic locus criteria</a>
+                    </h2>
+                    <p class="res-excerpt"><i>ELIS – Échanges Linguistiques en Sorbonne</i>, 9, 2024, pp. 42-59.</p>
+                    <div class="res-footer">
+                        <div class="res-audiences"><span class="res-audience">Recherche</span></div>
+                        <a class="res-action" href="https://hal.science/hal-04588012v1" target="_blank" rel="noopener"
+                            tabindex="-1" aria-hidden="true">
+                            HAL<span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
+                    </div>
+                </div>
+            </article>
+
+        </template>
+
+        <p class="res-empty" id="res-empty" hidden>Aucune ressource ne correspond à ces filtres pour le moment.</p>
+
+    </main>
+
+    <footer class="bg-zinc-50 border-t border-neutral-300 py-8 mt-auto">
+        <div
+            class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-500">
+            <p>&copy; 2026 - Juliette Cahard.</p>
+            <a href="mailto:julietteccahard@gmail.com" class="contact-btn">Me contacter</a>
+            <p class="uppercase tracking-widest text-xs">Site par LinguistCode</p>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.querySelector('header');
+        const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = () => {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.remove('is-open');
+        };
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            mobileMenu.classList.toggle('is-open', !isOpen);
+        });
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+        window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMenu(); });
+
+        // ---------- Ressources : tri, filtres, vidéos ----------
+        const grid = document.getElementById('res-grid');
+        const cards = [...grid.querySelectorAll('.res-card')];
+        const chips = [...document.querySelectorAll('.res-chip')];
+        const countEl = document.getElementById('res-count');
+        const emptyEl = document.getElementById('res-empty');
+
+        // Tri du plus récent au plus ancien
+        cards.sort((a, b) => b.dataset.date.localeCompare(a.dataset.date))
+            .forEach(card => grid.appendChild(card));
+
+        // État initial lu dans l'URL (ex. ressources.html?type=video&public=etudiants)
+        const allowed = { type: ['video', 'billet', 'document'], public: ['etudiants', 'recherche'] };
+        const params = new URLSearchParams(location.search);
+        const state = { type: 'all', public: 'all' };
+        Object.keys(allowed).forEach(k => {
+            if (allowed[k].includes(params.get(k))) state[k] = params.get(k);
+        });
+
+        const applyFilters = () => {
+            let n = 0;
+            cards.forEach(card => {
+                const okType = state.type === 'all' || card.dataset.type === state.type;
+                const okPublic = state.public === 'all' || card.dataset.audience.split(/\s+/).includes(state.public);
+                card.hidden = !(okType && okPublic);
+                if (!card.hidden) n++;
+            });
+            countEl.textContent = `${n} ${n > 1 ? 'ressources' : 'ressource'}`;
+            emptyEl.hidden = n > 0;
+            chips.forEach(chip =>
+                chip.setAttribute('aria-pressed', String(state[chip.dataset.filter] === chip.dataset.value)));
+
+            const url = new URL(location.href);
+            Object.keys(state).forEach(k =>
+                state[k] === 'all' ? url.searchParams.delete(k) : url.searchParams.set(k, state[k]));
+            history.replaceState(null, '', url);
+        };
+
+        chips.forEach(chip => chip.addEventListener('click', () => {
+            state[chip.dataset.filter] = chip.dataset.value;
+            applyFilters();
+        }));
+        applyFilters();
+
+        // Filtres masqués tant qu'il y a moins de deux ressources
+        document.querySelector('.res-filters').hidden = cards.length < 2;
+
+        // ---------- Vidéos : iframe chargée au clic + chapitres ----------
+        const post = (iframe, msg) => iframe.contentWindow && iframe.contentWindow.postMessage(JSON.stringify(msg), '*');
+
+        const loadVideo = (btn, start = 0) => {
+            const { provider, id, title } = btn.dataset;
+            const t = Math.floor(start);
+            const iframe = document.createElement('iframe');
+            if (provider === 'vimeo') {
+                iframe.src = `https://player.vimeo.com/video/${id}?autoplay=1&dnt=1#t=${t}s`;
+            } else {
+                const origin = location.protocol.startsWith('http') ? `&origin=${encodeURIComponent(location.origin)}` : '';
+                iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&enablejsapi=1&start=${t}${origin}`;
+                // Demande à YouTube d'envoyer le temps de lecture (surlignage du chapitre en cours)
+                iframe.addEventListener('load', () => post(iframe, { event: 'listening', id: 1, channel: 'widget' }));
+            }
+            iframe.dataset.provider = provider;
+            iframe.title = title || 'Vidéo';
+            iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+            iframe.allowFullscreen = true;
+            iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+            btn.replaceWith(iframe);
+            return iframe;
+        };
+
+        const seek = (card, t) => {
+            const iframe = card.querySelector('.res-media iframe');
+            if (!iframe) {
+                loadVideo(card.querySelector('.res-video'), t);
+            } else if (iframe.dataset.provider === 'vimeo') {
+                iframe.contentWindow.postMessage({ method: 'setCurrentTime', value: t }, '*');
+                iframe.contentWindow.postMessage({ method: 'play' }, '*');
+            } else {
+                post(iframe, { event: 'command', func: 'seekTo', args: [t, true] });
+                post(iframe, { event: 'command', func: 'playVideo', args: [] });
+            }
+            markCurrent(card, t);
+        };
+
+        // Surligne le chapitre le plus fin en cours (dernier chapitre dont le départ est ≤ t)
+        const markCurrent = (card, t) => {
+            const items = [...card.querySelectorAll('.chap-item')];
+            let current = null;
+            items.forEach(it => { if (+it.dataset.t <= t + 0.5) current = it; });
+            if (!current || current.classList.contains('is-current')) return;
+            items.forEach(it => { it.classList.remove('is-current'); it.removeAttribute('aria-current'); });
+            card.querySelectorAll('.chap-row.has-current').forEach(r => r.classList.remove('has-current'));
+            current.classList.add('is-current');
+            current.setAttribute('aria-current', 'true');
+            let g = current.closest('.chap-sub');
+            while (g) {
+                g.parentElement.querySelector(':scope > .chap-row').classList.add('has-current');
+                g = g.parentElement.closest('.chap-sub');
+            }
+        };
+
+        grid.querySelectorAll('.res-video').forEach(btn => btn.addEventListener('click', () => loadVideo(btn).focus()));
+
+        grid.querySelectorAll('.res-card').forEach(card => {
+            const chapters = card.querySelector('.res-chapters');
+            if (!chapters) return;
+
+            card.querySelectorAll('.chap-item').forEach(it =>
+                it.addEventListener('click', () => seek(card, +it.dataset.t)));
+
+            card.querySelectorAll('.chap-expand').forEach(btn => btn.addEventListener('click', () => {
+                const open = btn.getAttribute('aria-expanded') !== 'true';
+                btn.setAttribute('aria-expanded', String(open));
+                document.getElementById(btn.getAttribute('aria-controls')).hidden = !open;
+            }));
+
+            // Mobile : liste repliée derrière un bouton ; desktop : toujours visible à côté de la vidéo
+            const toggle = chapters.querySelector('.chap-toggle');
+            const mq = window.matchMedia('(min-width: 1024px)');
+            const syncToggle = () => {
+                toggle.tabIndex = mq.matches ? -1 : 0;
+                toggle.toggleAttribute('aria-hidden', mq.matches);
+            };
+            toggle.addEventListener('click', () => {
+                const open = toggle.getAttribute('aria-expanded') !== 'true';
+                toggle.setAttribute('aria-expanded', String(open));
+                chapters.classList.toggle('is-open', open);
+            });
+            mq.addEventListener('change', syncToggle);
+            syncToggle();
+        });
+
+        // Temps de lecture renvoyé par YouTube → chapitre en cours
+        window.addEventListener('message', e => {
+            if (!/youtube(-nocookie)?\.com$/.test(new URL(e.origin, location.href).hostname || '')) return;
+            let data;
+            try { data = JSON.parse(e.data); } catch { return; }
+            const time = data && data.info && data.info.currentTime;
+            if (typeof time !== 'number') return;
+            const iframe = [...grid.querySelectorAll('.res-media iframe')].find(f => f.contentWindow === e.source);
+            if (iframe) markCurrent(iframe.closest('.res-card'), time);
+        });
+    </script>
+</body>
+
+</html>

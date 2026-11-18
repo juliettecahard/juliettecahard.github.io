@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En construction | Juliette Cahard</title>
+
+    <link href="./style.css" rel="stylesheet">
+    <link href="./enhance.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-academic {
+            font-family: 'Lora', serif;
+        }
+    </style>
+</head>
+
+<body class="lang-en bg-patternbg bg-cover bg-center bg-fixed text-neutral-900 flex flex-col min-h-screen">
+
+    <header class="bg-zinc-50 border-b border-neutral-300">
+        <div class="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center relative">
+            <a href="index.html"
+                class="text-2xl font-academic font-bold text-neutral-900 tracking-tight hover:text-teal-600 transition-colors">
+                Juliette Cahard
+            </a>
+            <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="index.html" class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">Accueil</a>
+                <a href="recherche.html"
+                    class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">Recherche</a>
+                <a href="enseignement.html"
+                    class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">Enseignement</a>
+                <a href="ressources.html"
+                    class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">Ressources</a>
+                <a href="cv.html" class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">CV</a>
+            </nav>
+
+            <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
+
+            <nav id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile">
+                <a href="index.html">Accueil</a>
+                <a href="recherche.html">Recherche</a>
+                <a href="enseignement.html">Enseignement</a>
+                <a href="ressources.html">Ressources</a>
+                <a href="cv.html">CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow w-full px-4 py-16 flex items-center justify-center">
+        <article
+            class="wip-card panel reveal-up bg-zinc-50 border border-neutral-200 shadow-xl p-10 md:p-12 text-center">
+
+            <div class="wip-lang" role="group" aria-label="Langue / Language">
+                <button type="button" class="res-chip" data-lang="fr" aria-pressed="false">FR</button>
+                <button type="button" class="res-chip" data-lang="en" aria-pressed="true">EN</button>
+            </div>
+
+            <span class="wip-icon material-symbols-outlined" aria-hidden="true">construction</span>
+
+            <h1 class="text-5xl font-academic italic font-medium text-teal-600 tracking-tight mb-4">
+                <span class="en">Under construction</span>
+                <span class="fr">En construction</span>
+            </h1>
+
+            <p class="font-academic italic text-lg text-neutral-500">
+                <span class="en">Juliette Cahard — PhD Candidate in English Linguistics</span>
+                <span class="fr">Juliette Cahard — Doctorante en linguistique anglaise</span>
+            </p>
+
+            <div class="wip-divider" aria-hidden="true"></div>
+
+            <p class="text-neutral-600 leading-relaxed mb-8">
+                <span class="en">This page is not available yet. Please come back soon.</span>
+                <span class="fr">Cette page n'est pas encore disponible. Revenez bientôt.</span>
+            </p>
+
+            <a href="index.html"
+                class="inline-block bg-teal-600 text-white px-8 py-3 text-sm font-semibold uppercase tracking-wider hover:bg-teal-500 shadow-md">
+                <span class="en">Back to the site</span>
+                <span class="fr">Retour au site</span>
+            </a>
+        </article>
+    </main>
+
+    <footer class="bg-zinc-50 border-t border-neutral-300 py-8 mt-auto">
+        <div
+            class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-500">
+            <p>&copy; 2026 - Juliette Cahard.</p>
+            <a href="mailto:julietteccahard@gmail.com" class="contact-btn">Me contacter</a>
+            <p class="uppercase tracking-widest text-xs">Site par LinguistCode</p>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.querySelector('header');
+        const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = () => {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.remove('is-open');
+        };
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            mobileMenu.classList.toggle('is-open', !isOpen);
+        });
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+        window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMenu(); });
+
+        // Bascule FR / EN (met aussi à jour <html lang> pour les lecteurs d'écran)
+        const langButtons = document.querySelectorAll('.wip-lang [data-lang]');
+        const setLang = lang => {
+            document.body.classList.remove('lang-fr', 'lang-en');
+            document.body.classList.add(`lang-${lang}`);
+            document.documentElement.lang = lang;
+            langButtons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+        };
+        langButtons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enseignement | Juliette Cesar</title>
+
+    <!-- Feuilles de style : Tailwind compilé (style.css) et couche d'amélioration (enhance.css) -->
+    <link href="./style.css" rel="stylesheet">
+    <link href="./enhance.css" rel="stylesheet">
+
+    <!-- Typographies Google Fonts (Inter pour le corps, Lora pour le style académique) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icônes Google Material Symbols (utilisées pour les icônes dans les pilules de discipline) -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-academic {
+            font-family: 'Lora', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-patternbg bg-cover bg-center bg-fixed bg-stone-50 text-neutral-900 flex flex-col min-h-screen">
+
+    <!-- ============================================================
+         EN-TÊTE PRINCIPAL ET NAVIGATION
+         ============================================================ -->
+    <header class="bg-white border-b border-neutral-300">
+        <div class="max-w-6xl mx-auto px-4 py-5 flex justify-between items-center relative">
+
+            <!-- Logo / Nom  -->
+            <a href="index.html"
+                class="text-2xl font-academic font-bold text-neutral-900 tracking-tight hover:text-teal-600 transition-colors">
+                Juliette Cahard
+            </a>
+
+            <!-- Navigation Desktop -->
+            <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="index.html" class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">Accueil</a>
+                <a href="recherche.html"
+                    class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">Recherche</a>
+                <a href="enseignement.html" class="text-teal-600 border-b-2 border-teal-600 pb-1"
+                    aria-current="page">Enseignement</a>
+                <a href="ressources.html" class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">
+                    Ressources</a>
+                <a href="cv.html" class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">CV</a>
+            </nav>
+
+            <!-- Bouton Hamburger (Bascule du menu mobile) -->
+            <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
+
+            <!-- Navigation Mobile -->
+            <nav id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile">
+                <a href="index.html">Accueil</a>
+                <a href="recherche.html">Recherche</a>
+                <a href="enseignement.html" class="is-active" aria-current="page">Enseignement</a>
+                <a href="cv.html">CV</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- ============================================================
+         CONTENU PRINCIPAL DE LA PAGE
+         ============================================================ -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-12 w-full">
+
+        <!-- En-tête de la page Enseignement -->
+        <div
+            class="mb-12 border-b border-neutral-300 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4 reveal-up">
+            <h1 class="text-5xl md:text-6xl font-bold text-neutral-900 font-academic tracking-tight">
+                <span class="text-teal-600 italic font-medium">Enseignement</span>
+            </h1>
+            <p class="text-neutral-500 text-sm uppercase tracking-widest md:text-right">
+                5 postes &mdash; 2019 à aujourd'hui
+            </p>
+        </div>
+
+        <!-- Conteneur des cartes de postes -->
+        <div class="space-y-6 mb-16">
+
+            <!-- ------------------------------------------------------------
+                 POSTE 3 : ATER (Sorbonne Université)
+                 ------------------------------------------------------------ -->
+            <article
+                class="panel reveal-up d-1 bg-white border border-neutral-200 rounded-md shadow-md overflow-hidden md:flex">
+
+                <!-- Illustration du site universitaire -->
+                <div class="course-card-media">
+                    <img src="src/sorbonne2.jpg" alt="Site Clignancourt de Sorbonne Université"
+                        class="object-cover w-full h-full">
+                </div>
+
+                <!-- Informations sur le poste -->
+                <div class="p-6 md:p-8 flex-1">
+                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                        <span
+                            class="bg-teal-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest rounded-sm">ATER</span>
+                        <span class="text-neutral-500 text-xs font-medium uppercase tracking-widest">2026 - 2027</span>
+                    </div>
+                    <h2 class="text-xl font-academic font-bold text-neutral-900 mb-2">Sorbonne Université - Faculté des
+                        Lettres</h2>
+                    <p class="text-neutral-600 text-sm leading-relaxed mb-6">
+                        Enseignements en Licence, en grammaire, phonologie et traduction de l'anglais.
+                    </p>
+
+                    <!-- Accordéon des cours du poste ATER -->
+                    <details class="course-block" open>
+                        <summary>
+                            <span>Voir les cours (8)</span>
+                            <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </summary>
+                        <ul class="course-list divide-y divide-neutral-200">
+
+                            <!-- Grammaire l1s1-->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l1">Licence 1 S1</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Nature et fonction</span>
+                                        <span class="pill-discipline pill-grammaire">
+                                            <span class="material-symbols-outlined">menu_book</span>
+                                            Grammaire
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Introduction à l'analyse grammaticale : Découverte des natures et
+                                        fonctions des mots, syntagmes et propositions subordonnées.
+                                    </p>
+                                </div>
+                            </li>
+                            <!-- Phonologie l1s1-->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l1">Licence 1 S1</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Introduction à la phonétique et la phonologie de l'anglais</span>
+                                        <span class="pill-discipline pill-phonologie">
+                                            <span class="material-symbols-outlined">graphic_eq</span>
+                                            Phonologie
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Introduction à la phonologie et la phonétique de l’anglais (prononciation,
+                                        transcription phonétique et orthographe, phonétique articulatoire, introduction
+                                        aux règles phonologiques)
+                                    </p>
+                                </div>
+                            </li>
+
+                            <!--  Traduction (Thème) l1s2-->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l1">Licence 1 S2</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Thème</span>
+                                        <span class="pill-discipline pill-traduction">
+                                            <span class="material-symbols-outlined">translate</span>
+                                            Traduction
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Acquisition des principes de base de la traduction du français vers l’anglais.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <!-- Grammaire l1s2-->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l1">Licence 1 S2</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Le Syntagme Verbal</span>
+                                        <span class="pill-discipline pill-grammaire">
+                                            <span class="material-symbols-outlined">menu_book</span>
+                                            Grammaire
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Valence, transitivité, auxiliaires, « phrasal verbs », temps et aspects
+                                    </p>
+                                </div>
+                            </li>
+
+                            <!-- Phonologie l2s1-->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l2">Licence 2 S1</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Phonétique et phonologie de l'anglais</span>
+                                        <span class="pill-discipline pill-phonologie">
+                                            <span class="material-symbols-outlined">graphic_eq</span>
+                                            Phonologie
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Voyelles accentuées et inaccentuées (monographes, digraphes), accentuation des
+                                        mots simples et dérivés (terminaisons contraignantes et non contraignantes,
+                                        préfixation)
+                                    </p>
+                                </div>
+                            </li>
+
+                            <!-- Grammaire l2s1-->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l2">Licence 2 S1</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>La phrase complexe</span>
+                                        <span class="pill-discipline pill-grammaire">
+                                            <span class="material-symbols-outlined">menu_book</span>
+                                            Grammaire
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Phrases complexes et propositions subordonnées : Analyse grammaticale et
+                                        logique, Étude des différents types de propositions (indépendantes, principales,
+                                        subordonnées), Étude détaillée des propositions subordonnées relatives et
+                                        nominales
+                                    </p>
+                                </div>
+                            </li>
+
+
+
+                            <!-- Phonologie l3s1 -->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l3">Licence 3 S1</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>L'intonation en SBE</span>
+                                        <span class="pill-discipline pill-phonologie">
+                                            <span class="material-symbols-outlined">graphic_eq</span>
+                                            Phonologie
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Intonation (Tone Units, Tonic Syllables, Tones, Intonation in Context). Work on
+                                        authentic data.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <!-- Phonologie l3s2 -->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l3">Licence 3 S2</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Variations phonologiques </span>
+                                        <span class="pill-discipline pill-phonologie">
+                                            <span class="material-symbols-outlined">graphic_eq</span>
+                                            Phonologie
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Etudes comparative de l'anglais GA et SBE
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+            </article>
+            <!-- ------------------------------------------------------------
+                 POSTE 2.5 : Chargé de TD pendant CD (Sorbonne Université - fac de sciences)
+                 ------------------------------------------------------------ -->
+            <article
+                class="panel reveal-up d-2 bg-white border border-neutral-200 rounded-md shadow-md overflow-hidden md:flex">
+
+                <!-- Illustration du site universitaire -->
+                <div class="course-card-media">
+                    <img src="src/jussieu.jpg" alt="Sorbonne Université" class="object-cover w-full h-full">
+                </div>
+
+                <!-- Informations sur le poste -->
+                <div class="p-6 md:p-8 flex-1">
+                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                        <span
+                            class="bg-teal-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest rounded-sm">Chargée
+                            de TD</span>
+                        <span class="text-neutral-500 text-xs font-medium uppercase tracking-widest">2025 - 2026</span>
+                    </div>
+                    <h2 class="text-xl font-academic font-bold text-neutral-900 mb-2">Sorbonne Université - Faculté des
+                        Sciences et Ingénierie </h2>
+                    <p class="text-neutral-600 text-sm leading-relaxed mb-6">
+                        Mission d'enseignement réalisée en Master de Recherche SDUEE (1ere année) au département des
+                        langues. Cours d'anglais oral et écrit.
+                    </p>
+
+                    <!-- BLOC DES COURS FAC DE SCIENCES (1 cours) -->
+                    <details class="course-block" open>
+                        <summary>
+                            <span>Voir le cours (1)</span>
+                            <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </summary>
+                        <ul class="course-list divide-y divide-neutral-200">
+
+                            <!-- Anglais  -->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l1">Master 1 S1</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Langue Anglaise</span>
+                                        <span class="pill-discipline pill-langue">
+                                            <span class="material-symbols-outlined">voice_selection</span>
+                                            Langue
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Cours de langue écrite et orale : compréhension écrite et orale à partir
+                                        d'articles scientifiques, exposés, points de grammaire et phonologie.
+                                    </p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </details>
+                </div>
+            </article>
+
+            <!-- ------------------------------------------------------------
+                 POSTE 2 : CONTRAT DOCTORAL (Sorbonne Université)
+                 ------------------------------------------------------------ -->
+            <article
+                class="panel reveal-up d-2 bg-white border border-neutral-200 rounded-md shadow-md overflow-hidden md:flex">
+
+                <!-- Illustration du site universitaire -->
+                <div class="course-card-media">
+                    <img src="src/sorbonne2.jpg" alt="Sorbonne Université" class="object-cover w-full h-full">
+                </div>
+
+                <!-- Informations sur le poste -->
+                <div class="p-6 md:p-8 flex-1">
+                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                        <span
+                            class="bg-teal-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest rounded-sm">Contrat
+                            Doctoral</span>
+                        <span class="text-neutral-500 text-xs font-medium uppercase tracking-widest">2023 - 2026</span>
+                    </div>
+                    <h2 class="text-xl font-academic font-bold text-neutral-900 mb-2">Sorbonne Université - Faculté des
+                        Lettres</h2>
+                    <p class="text-neutral-600 text-sm leading-relaxed mb-6">
+                        Mission d'enseignement réalisée en licence LLCER à l'UFR d'Anglais. Cours de grammaire et
+                        phonologie.
+                    </p>
+
+                    <!-- BLOC DES COURS CONTRAT DOC (7 cours) -->
+                    <details class="course-block" open>
+                        <summary>
+                            <span>Voir les cours (7)</span>
+                            <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </summary>
+                        <ul class="course-list divide-y divide-neutral-200">
+
+                            <!-- Grammaire L1S1 (CD) -->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l1">Licence 1 S1</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Nature et fonction</span>
+                                        <span class="pill-discipline pill-grammaire">
+                                            <span class="material-symbols-outlined">menu_book</span>
+                                            Grammaire
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Introduction à l'analyse grammaticale : Découverte des natures et
+                                        fonctions des mots et des syntagmes.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <!-- Phonologie l1s1 (CD)-->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l1">Licence 1 S1</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Introduction à la phonétique et la phonologie de l'anglais</span>
+                                        <span class="pill-discipline pill-phonologie">
+                                            <span class="material-symbols-outlined">graphic_eq</span>
+                                            Phonologie
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Introduction à la phonologie et la phonétique de l’anglais (prononciation,
+                                        transcription phonétique et orthographe, phonétique articulatoire, introduction
+                                        aux règles phonologiques)
+                                    </p>
+                                </div>
+                            </li>
+
+                            <!-- Grammaire L1 S2 (CD) -->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l1">Licence 1 S2</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Le Syntagme Verbal</span>
+                                        <span class="pill-discipline pill-grammaire">
+                                            <span class="material-symbols-outlined">menu_book</span>
+                                            Grammaire
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Valence, transitivité, auxiliaires, « phrasal verbs », temps et aspects.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <!-- Phono L1 S2 (CD)  -->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l1">Licence 1 S2</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Phonétique de l'anglais</span>
+                                        <span class="pill-discipline pill-phonologie">
+                                            <span class="material-symbols-outlined">graphic_eq</span>
+                                            Phonologie
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Introduction à la phonologie et la phonétique de l’anglais (préfixes, suffixes
+                                        et accent de mot, initiation à la phonographématique)
+                                    </p>
+                                </div>
+                            </li>
+
+                            <!-- Cours 5 : Licence 2 S2 Grammaire -->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l2">Licence 2 S2</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>La structure informationnelle</span>
+                                        <span class="pill-discipline pill-grammaire">
+                                            <span class="material-symbols-outlined">menu_book</span>
+                                            Grammaire
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Analyse logique, réagencements de l’ordre canonique (passif, dislocation,
+                                        extraposition et clivage) et introduction à la pragmatique (Grice / Austin)
+                                    </p>
+                                </div>
+                            </li>
+
+                            <!-- Cours 6 : Licence 3 S1 Grammaire  -->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l3">Licence 3 S1</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Le nom et le syntagme nominal</span>
+                                        <span class="pill-discipline pill-grammaire">
+                                            <span class="material-symbols-outlined">menu_book</span>
+                                            Grammaire
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        fonctionnement du nom, détermination nominale, adjectifs, type de référence et
+                                        syntagme nominal complexe, introduction au travail de recherche avec la
+                                        réalisation d’un mini mémoire
+                                    </p>
+                                </div>
+                            </li>
+
+
+                            <!-- Cours 7 : Licence 3 S1 Phonologie  -->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l3">Licence 3 S1</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>L'intonation en SBE</span>
+                                        <span class="pill-discipline pill-phonologie">
+                                            <span class="material-symbols-outlined">graphic_eq</span>
+                                            Phonologie
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Intonation (Tone Units, Tonic Syllables, Tones, Intonation in Context). Work on
+                                        authentic data.
+                                    </p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </details>
+                </div>
+            </article>
+
+            <!-- ------------------------------------------------------------
+                 POSTE 1 : PROFESSEURE AGRÉGÉE (Lycée Jacques Monod)
+                 ------------------------------------------------------------ -->
+            <article
+                class="panel reveal-up d-3 bg-white border border-neutral-200 rounded-md shadow-md overflow-hidden md:flex">
+
+                <!-- Illustration du lycée -->
+                <div class="course-card-media">
+                    <img src="src/monod.png" alt="Lycée Monod" class="object-cover w-full h-full">
+                </div>
+
+                <!-- Informations sur le poste -->
+                <div class="p-6 md:p-8 flex-1">
+                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                        <span
+                            class="bg-neutral-800 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest rounded-sm">Professeure
+                            Agrégée</span>
+                        <span class="text-neutral-500 text-xs font-medium uppercase tracking-widest">2022 - 2023</span>
+                    </div>
+                    <h2 class="text-xl font-academic font-bold text-neutral-900 mb-2">Lycée Jacques Monod, Clamart</h2>
+                    <p class="text-neutral-600 text-sm leading-relaxed mb-6">
+                        Enseignement de l'anglais à trois classes de secondes.
+                    </p>
+
+                    <!-- Accordéon des cours du lycée (1 cours) -->
+                    <details class="course-block">
+                        <summary>
+                            <span>Voir les cours (1)</span>
+                            <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </summary>
+                        <ul class="course-list divide-y divide-neutral-200">
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-seconde">Seconde</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4 class="font-bold font-academic text-base text-neutral-900 mb-1">Anglais</h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Anglais général, grammaire, phonologie, traduction et civilisation. Création de
+                                        séquences pédagogiques entières.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+            </article>
+
+            <!-- ------------------------------------------------------------
+                 POSTE 0.5 : Lectorat Angleterre
+                 ------------------------------------------------------------ -->
+            <article
+                class="panel reveal-up d-2 bg-white border border-neutral-200 rounded-md shadow-md overflow-hidden md:flex">
+
+                <!-- Illustration du site universitaire -->
+                <div class="course-card-media">
+                    <img src="src/kent.jpg" alt="Sorbonne Université" class="object-cover w-full h-full">
+                </div>
+
+                <!-- Informations sur le poste -->
+                <div class="p-6 md:p-8 flex-1">
+                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                        <span
+                            class="bg-green-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest rounded-sm">Assistante
+                            de Français</span>
+                        <span class="text-neutral-500 text-xs font-medium uppercase tracking-widest">2019-2020</span>
+                    </div>
+                    <h2 class="text-xl font-academic font-bold text-neutral-900 mb-2">Rainham Mark Grammar School,
+                        Rainham, Kent, Angleterre </h2>
+                    <p class="text-neutral-600 text-sm leading-relaxed mb-6">
+                        Assistanat en Angleterre réalisé après mon Master, au contact d'adolescents.
+                    </p>
+
+                    <!-- BLOC DES COURS Angleterre (2 cours) -->
+                    <details class="course-block" open>
+                        <summary>
+                            <span>Voir les cours (2)</span>
+                            <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </summary>
+                        <ul class="course-list divide-y divide-neutral-200">
+
+                            <!-- Français  -->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l1">Year 8 - Year 10</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Langue Française</span>
+                                        <span class="pill-discipline pill-langue">
+                                            <span class="material-symbols-outlined">voice_selection</span>
+                                            Langue
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Activités de groupes. Pratique de la langue française orale.
+                                    </p>
+                                </div>
+                            </li>
+                            <!-- Français  -->
+                            <li class="p-5 flex flex-col md:flex-row gap-2 md:gap-8">
+                                <div class="md:w-1/4 course-item-col-left">
+                                    <span class="badge-year badge-l1">Year 11 - Year 12</span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4
+                                        class="font-bold font-academic text-base text-neutral-900 mb-1 flex items-center flex-wrap gap-2">
+                                        <span>Langue et culture Françaises</span>
+                                        <span class="pill-discipline pill-langue">
+                                            <span class="material-symbols-outlined">voice_selection</span>
+                                            Langue
+                                        </span>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm leading-relaxed">
+                                        Pratique de la langue française orale, Phonologie, Apports culturels français,
+                                        Traduction.
+                                    </p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </details>
+                </div>
+            </article>
+
+
+        </div>
+
+    </main>
+
+    <!-- ============================================================
+         PIED DE PAGE (FOOTER)
+         ============================================================ -->
+    <footer class="bg-white border-t border-neutral-300 py-8 mt-auto">
+        <div
+            class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-500">
+            <p>&copy; 2026 - Juliette Cahard.</p>
+            <a href="mailto:juliette.cesar@example.fr" class="contact-btn">Me contacter</a>
+            <p class="uppercase tracking-widest text-xs">
+                Site par <a href="https://aurelienamet.linguist.fr" class="hover:underline">LinguistCode</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         SCRIPTS INTERACTIFS (Scroll header & Navigation Mobile)
+         ============================================================ -->
+    <script>
+        // Effet d'ombre sur le header lors du défilement
+        const header = document.querySelector('header');
+        const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        // Gestion de la bascule du menu mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        const closeMenu = () => {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.remove('is-open');
+        };
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            mobileMenu.classList.toggle('is-open', !isOpen);
+        });
+
+        // Fermeture automatique lors d'un clic sur un lien, touche Échap ou redimensionnement
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+        window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMenu(); });
+    </script>
+</body>
+
+</html>

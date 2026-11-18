@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche | Juliette Cahard</title>
+
+    <link href="./style.css" rel="stylesheet">
+    <link href="./enhance.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-academic {
+            font-family: 'Lora', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-patternbg bg-cover bg-center bg-fixed text-neutral-900 flex flex-col min-h-screen">
+
+    <header class="bg-zinc-50 border-b border-neutral-300">
+        <div class="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center relative">
+            <a href="index.html"
+                class="text-2xl font-academic font-bold text-neutral-900 tracking-tight hover:text-teal-600 transition-colors">
+                Juliette Cahard
+            </a>
+            <!-- Navigation Desktop -->
+            <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="index.html" class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">Accueil</a>
+                <a href="recherche.html" class="text-teal-600 border-b-2 border-teal-600 pb-1"
+                    aria-current="page">Recherche</a>
+                <a href="enseignement.html"
+                    class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">Enseignement</a>
+                <a href="ressources.html" class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">
+                    Ressources</a>
+                <a href="cv.html" class="text-neutral-500 hover:text-neutral-900 transition-colors pb-1">CV</a>
+            </nav>
+
+            <!-- Bouton Hamburger (Bascule du menu mobile) -->
+            <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
+
+            <!-- Navigation Mobile -->
+            <nav id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile">
+                <a href="index.html">Accueil</a>
+                <a href="recherche.html" class="is-active" aria-current="page">Recherche</a>
+                <a href="enseignement.html">Enseignement</a>
+                <a href="cv.html">CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-16 w-full flex flex-col gap-12">
+
+        <div class="border-b border-neutral-300 pb-6 mb-4 reveal-up">
+            <h1 class="text-5xl md:text-6xl text-teal-600 italic font-medium font-academic tracking-tight">
+                Travaux de Recherche
+            </h1>
+        </div>
+
+        <!-- SECTION SUPÉRIEURE (PROJET DE THÈSE & PUBLIC) -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <article
+                class="panel reveal-up d-1 bg-zinc-50 p-10 border border-neutral-200 shadow-xl flex flex-col justify-center">
+                <div class="flex items-center justify-between mb-8 border-b border-neutral-200 pb-4">
+                    <h2 class="text-3xl font-academic font-bold text-neutral-900">Projet de Thèse</h2>
+                    <span
+                        class="border border-teal-600 text-teal-600 text-xs font-bold px-3 py-1 uppercase tracking-widest">En
+                        cours</span>
+                </div>
+                <p class="text-neutral-600 leading-relaxed mb-6 text-lg">
+                    Ma recherche se concentre sur la structure interne des syntagmes nominaux (SN) en anglais.
+                    J'explore la notion de tête syntaxique en lien avec les interprétations sémantiques et le contexte
+                    pragmatique.
+                </p>
+                <p class="text-neutral-600 leading-relaxed mb-8 text-lg">
+                    L'objectif est de démontrer comment les hiérarchies internes au sein du syntagme influencent
+                    directement la catégorisation des entités dans le discours, en m'appuyant sur des données de corpus
+                    authentiques.
+                </p>
+
+                <div>
+                    <button id="toggle-abstract" aria-expanded="false" aria-controls="abstract-section"
+                        class="inline-flex items-center gap-3 bg-teal-600 text-white px-8 py-3 text-sm font-semibold uppercase tracking-wider hover:bg-teal-500 hover:text-zinc-600 transition-colors shadow-md cursor-pointer">
+                        <span id="toggle-abstract-text">Lire le résumé complet</span>
+                        <svg id="toggle-abstract-icon" class="w-4 h-4 transition-transform duration-300" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </article>
+
+            <article class="panel reveal-up d-1 bg-zinc-50 p-10 border border-neutral-200 shadow-xl flex flex-col">
+                <div class="flex items-center justify-between mb-8 border-b border-neutral-200 pb-4">
+                    <h2 class="text-3xl font-academic font-bold text-neutral-900">Publications</h2>
+
+                </div>
+                <div class="group relative pl-6 border-l-2 border-neutral-200 hover:border-teal-500 transition-colors">
+                    <div
+                        class="absolute left-[-5px] top-1.5 w-2 h-2 bg-neutral-300 group-hover:bg-teal-500 transition-colors">
+                    </div>
+                    <span class="text-m font-bold text-teal-600 uppercase tracking-widest mb-2 block">2024</span>
+                    <h3 class="font-bold font-academic text-xl text-neutral-900 mb-2 leading-snug">The notion of
+                        ‘head’ in the description of the English language: assessment of the
+                        semantic and morphosyntactic locus criteria
+                    </h3>
+                    <p class="text-neutral-600 text-m italic">ELIS - Échanges Linguistiques en
+                        Sorbonne, 9, 2024, pp 42-59, <a href="https://hal.science/hal-04588012v1">hal-04588012</a>
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <!------------SECTION ABSTRACT TH7SE COMPLET------------>
+        <section id="abstract-section" class="hidden panel bg-zinc-50 p-8 md:p-10 border border-neutral-200 shadow-xl">
+            <div class="flex items-center justify-between mb-6 border-b border-neutral-200 pb-4">
+                <h3 class="text-2xl font-academic font-bold text-neutral-900">Résumé de la thèse</h3>
+                <span
+                    class="text-xs font-bold text-teal-600 uppercase tracking-widest border border-teal-600 px-2.5 py-1">Abstract</span>
+            </div>
+
+            <!-- Résumé complet -->
+            <div class="text-neutral-600 leading-relaxed text-base space-y-4 mb-8">
+                <p>
+                    Je m'intéresse aux hiérarchies dans la langue, qu'elles opèrent aux niveaux syntaxique, sémantique
+                    ou encore énonciatif. Dans ma thèse, je me pencherai plus particulièrement sur la notion de « tête »
+                    dans la description des SN de l'anglais, la « tête » étant le plus souvent définie comme le
+                    constituant qui caractérise ou domine l'ensemble. Le point de départ de cette recherche est la
+                    perception d'un flottement autour de cette notion de « tête ». Il n'y a pas de consensus sur ce
+                    qu'est une tête, ni, par conséquent, sur l'identification de la tête dans un syntagme. Même à
+                    l'intérieur d'un cadre théorique, au moins dans certains cas, l'identification de la tête d'un
+                    syntagme peut poser problème.
+                </p>
+                <p>
+                    Une première difficulté est que, selon les syntagmes, la tête semble être tantôt un élément lexical,
+                    tantôt un élément grammatical. Ainsi, dans les syntagmes adjectivaux (ex : <em>very quick</em>) on
+                    considère que l'adjectif <em>quick</em> est tête. Cette description fait de la tête un élément
+                    lexical. Dans les SP en revanche (ex : <em>on the table</em>), on considère traditionnellement que
+                    la tête est la préposition — or il s'agit cette fois d'un élément grammatical. Il n'y a donc pas
+                    d'uniformité sur la nature de la tête dans la description de la hiérarchie des différents syntagmes.
+                </p>
+                <p>
+                    Une deuxième difficulté réside dans le fait que, pour certains syntagmes, différentes théories
+                    identifient différentes têtes. Un constituant tel que <em>the book</em> peut alors être décrit soit
+                    comme un syntagme nominal (<strong>Bloomfield 1933</strong>, <strong>Payne 2002</strong>) dont la
+                    tête est un nom, soit comme un syntagme déterminatif (<strong>Abney 1987</strong>) dont la tête
+                    serait un déterminant. On rencontre une difficulté similaire du côté des SV (dont l'étendue est par
+                    ailleurs sujette à désaccords), pour lesquels la tête peut être le verbe lexical, l'auxiliaire ou
+                    encore la conjugaison — on parle alors de IP (<strong>Chomsky : 1986</strong>) que <strong>Pollock
+                        (1998)</strong> traduit par « syntagme inflexionnel ».
+                </p>
+                <p>
+                    Une troisième difficulté est que, même lorsqu'il est admis que la tête est, par exemple, sémantique,
+                    il reste de nombreux cas où son identification pose problème. La question se pose par exemple dans
+                    les constructions internominales telles que <em>a slice of bread</em> / <em>a lot of bread</em> ou
+                    dans les « appositions courtes » telles que <em>Planet Earth</em> ou encore dans des syntagmes tels
+                    que <em>the rich</em>.
+                </p>
+                <p>
+                    De façon surprenante, étant donné la liste de difficultés, et l'importance des hiérarchies dans la
+                    langue (comment pourrions-nous communiquer et traiter l'information si elle n'était pas hiérarchisée
+                    ?), les travaux abordant la question de la tête sont peu nombreux, et ne permettent pas d'aboutir à
+                    un consensus quant aux critères qui font qu'un élément est tête. Mon objectif sera donc de clarifier
+                    la notion de tête ; de rechercher pour les SN et les SV, les candidats potentiels au statut de tête,
+                    et d'examiner sur quel(s) critère(s) on peut affirmer qu'un élément est tête. Ceci devrait me donner
+                    des éléments pour ensuite affiner la description de la hiérarchie des syntagmes étudiés.
+                </p>
+                <p>
+                    Il ne s'agira pas nécessairement d'identifier une « bonne réponse », mais peut-être aussi
+                    d'envisager les différentes possibilités comme révélatrices de différentes logiques, simultanées ou
+                    non, éventuellement concurrentes, à l'œuvre dans la langue. En effet, je n'exclus pas la possibilité
+                    que plusieurs hiérarchies pourraient être à l'œuvre dans un syntagme, et qu'on ait tendance à en
+                    identifier une, au détriment des autres, selon qu'on adopte un point de vue syntaxique, sémantique,
+                    ou énonciatif. Ceci pourrait constituer l'apport de mon travail à la littérature existante.
+                </p>
+                <p>
+                    Au final, mes recherches devraient permettre de produire une description plus fine des syntagmes du
+                    point de vue de leur(s) hiérarchie(s). De façon plus générale, elles permettent d'aborder la
+                    question de la mise en forme du sens : dans toute production discursive on peut identifier des
+                    blocs, qui ont une délimitation externe, mais aussi une organisation interne (une, ou plusieurs
+                    hiérarchie(s)).
+                </p>
+            </div>
+
+            <!-- Mots-clés + Bouton Fermer sur la droite -->
+            <div class="pt-4 border-t border-neutral-200 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <span class="text-xs font-bold text-neutral-500 uppercase tracking-wider block mb-3">Mots-clés
+                        :</span>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-neutral-200/60 text-neutral-700 border border-neutral-300 text-xs font-medium px-2.5 py-1 rounded-sm">Syntaxe</span>
+                        <span
+                            class="bg-neutral-200/60 text-neutral-700 border border-neutral-300 text-xs font-medium px-2.5 py-1 rounded-sm">Syntagme
+                            Nominal</span>
+                        <span
+                            class="bg-neutral-200/60 text-neutral-700 border border-neutral-300 text-xs font-medium px-2.5 py-1 rounded-sm">Tête
+                            Syntaxique/sémantique/Pragmatique</span>
+                        <span
+                            class="bg-neutral-200/60 text-neutral-700 border border-neutral-300 text-xs font-medium px-2.5 py-1 rounded-sm">Sémantique</span>
+                        <span
+                            class="bg-neutral-200/60 text-neutral-700 border border-neutral-300 text-xs font-medium px-2.5 py-1 rounded-sm">Pragmatique</span>
+
+                    </div>
+                </div>
+
+                <!-- Bouton de fermeture fin et discret -->
+                <button id="close-abstract-btn"
+                    class="inline-flex items-center gap-1.5 text-xs text-neutral-500 hover:text-neutral-900 font-medium tracking-wide transition-colors py-1.5 px-3 border border-neutral-300 hover:border-neutral-400 bg-white rounded-sm cursor-pointer whitespace-nowrap self-start md:self-auto">
+                    <span class="material-symbols-outlined" style="font-size: 14px; line-height: 1;">close</span>
+                    Fermer le résumé
+                </button>
+            </div>
+        </section>
+
+        <!-- SECTION CORPUS & MÉTHODOLOGIE -->
+        <!-- <section class="panel reveal-scroll bg-zinc-700 text-white border border-zinc-700 p-10 shadow-xl">
+            <h2
+                class="text-3xl font-academic font-bold mb-8 border-b border-neutral-600 pb-4 flex items-center justify-between text-teal-400">
+                Corpus & Méthodologie
+                <span class="w-2 h-2 bg-white rounded-none inline-block"></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3">Extraction de données</h3>
+                    <p class="text-neutral-300 leading-relaxed text-sm">
+                        L'ensemble de mes analyses théoriques est systématiquement confronté à la réalité de l'usage.
+                        J'utilise des bases de données comme les corpus <strong>enTenTen21</strong> et <strong>English
+                            Trends 2014-today</strong> via <em>SketchEngine</em> pour extraire des occurrences
+                        authentiques via des requêtes CQL.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3">Traitement sémantique</h3>
+                    <p class="text-neutral-300 leading-relaxed text-sm">
+                        Les données extraites sont ensuite annotées et soumises à des tests de manipulation syntaxique
+                        et de jugement d'acceptabilité auprès de locuteurs natifs, afin de valider les hypothèses
+                        pragmatiques et sémantiques.
+                    </p>
+                </div>
+            </div>
+        </section>-->
+
+        <!-- SECTION COMMUNICATIONS ET ANIMATIONS -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+            <!--COMMUNICATION SUBSECTION-->
+            <article class="panel reveal-scroll bg-zinc-50 p-10 border border-neutral-200 shadow-xl">
+                <h2 class="text-3xl font-academic font-bold text-neutral-900 mb-10 flex items-center gap-4">
+                    Communications
+                    <span class="w-16 h-[2px] bg-teal-600 inline-block"></span>
+                </h2>
+                <div class="space-y-10">
+                    <!--Communication 7 -->
+                    <div
+                        class="group relative pl-6 border-l-2 border-neutral-200 hover:border-teal-500 transition-colors">
+                        <div
+                            class="absolute left-[-5px] top-1.5 w-2 h-2 bg-neutral-300 group-hover:bg-teal-500 transition-colors">
+                        </div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-2 block">11 décembre
+                            2026</span>
+                        <h3 class="font-bold font-academic text-xl text-neutral-900 mb-2 leading-snug">From Expressive
+                            Statement to Exclamation: The Hybrid Pragmatics of the be the shit Construction</h3>
+                        <p class="text-neutral-600 text-sm italic">Colloque <i>Exclamation: Form(s) and Function(s)</i>,
+                            Sorbonne Université, Paris
+                        </p>
+                    </div>
+
+                    <!--Communication 6 -->
+                    <div
+                        class="group relative pl-6 border-l-2 border-neutral-200 hover:border-teal-500 transition-colors">
+                        <div
+                            class="absolute left-[-5px] top-1.5 w-2 h-2 bg-neutral-300 group-hover:bg-teal-500 transition-colors">
+                        </div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-2 block">04 juin
+                            2026</span>
+                        <h3 class="font-bold font-academic text-xl text-neutral-900 mb-2 leading-snug">Hiérarchies au
+                            sein du SN : hypothèse d'une tête pragmatique</h3>
+                        <p class="text-neutral-600 text-sm italic">65e Congrés de la SAES, Atelier de l'ALAES,
+                            Université de Poitiers.
+                        </p>
+                    </div>
+                    <!--Communication 5 -->
+                    <div
+                        class="group relative pl-6 border-l-2 border-neutral-200 hover:border-teal-500 transition-colors">
+                        <div
+                            class="absolute left-[-5px] top-1.5 w-2 h-2 bg-neutral-300 group-hover:bg-teal-500 transition-colors">
+                        </div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-2 block">04 septembre
+                            2025</span>
+                        <h3 class="font-bold font-academic text-xl text-neutral-900 mb-2 leading-snug">The notion of
+                            head within noun phrases: criteria or symptoms?</h3>
+                        <p class="text-neutral-600 text-sm italic">ESSE Doctoral Symposium 2025, Université de Malte, La
+                            Valette, Malte.</p>
+                    </div>
+                    <!--Communication 4 -->
+                    <div
+                        class="group relative pl-6 border-l-2 border-neutral-200 hover:border-teal-500 transition-colors">
+                        <div
+                            class="absolute left-[-5px] top-1.5 w-2 h-2 bg-neutral-300 group-hover:bg-teal-500 transition-colors">
+                        </div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-2 block">08 Juin
+                            2025</span>
+                        <h3 class="font-bold font-academic text-xl text-neutral-900 mb-2 leading-snug">La notion de
+                            'tête syntaxique' dans les cas de coordination nominale en AND</h3>
+                        <p class="text-neutral-600 text-sm italic">64e Congrés de la SAES, Atelier de l'ALAES,
+                            Université de Toulouse</p>
+                    </div>
+                    <!-- Communication 3 -->
+                    <div
+                        class="group relative pl-6 border-l-2 border-neutral-200 hover:border-teal-500 transition-colors">
+                        <div
+                            class="absolute left-[-5px] top-1.5 w-2 h-2 bg-neutral-300 group-hover:bg-teal-500 transition-colors">
+                        </div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-2 block">31 mai
+                            2024</span>
+                        <h3 class="font-bold font-academic text-xl text-neutral-900 mb-2 leading-snug">Déterminer la
+                            pertinence des critères de la notion de 'tête' dans la description de l'anglais</h3>
+                        <p class="text-neutral-600 text-sm italic">63e Congrés de la SAES, Atelier de l'ALAES,
+                            Université de Lorraine, Nancy</p>
+                    </div>
+                    <!--Communication 2 -->
+                    <div
+                        class="group relative pl-6 border-l-2 border-neutral-200 hover:border-teal-500 transition-colors">
+                        <div
+                            class="absolute left-[-5px] top-1.5 w-2 h-2 bg-neutral-300 group-hover:bg-teal-500 transition-colors">
+                        </div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-2 block">09 février
+                            2024</span>
+                        <h3 class="font-bold font-academic text-xl text-neutral-900 mb-2 leading-snug">La définition de
+                            'tête' : évaluation des critères d'obligation et d'équivalence distributionnelle dans les
+                            syntagmes nominaux</h3>
+                        <p class="text-neutral-600 text-sm italic">JE des jeunes chercheur.euses, CeLiSo,
+                            Sorbonne Université, Paris</p>
+                    </div>
+                    <!-- Communication 1 -->
+                    <div
+                        class="group relative pl-6 border-l-2 border-neutral-200 hover:border-teal-500 transition-colors">
+                        <div
+                            class="absolute left-[-5px] top-1.5 w-2 h-2 bg-neutral-300 group-hover:bg-teal-500 transition-colors">
+                        </div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-2 block">03 février
+                            2023</span>
+                        <h3 class="font-bold font-academic text-xl text-neutral-900 mb-2 leading-snug">La notion de
+                            'tête' au sein des différents syntagmes en anglais contemporain : définitions et critères
+                        </h3>
+                        <p class="text-neutral-600 text-sm italic">Journée d'Etude des jeunes chercheur.euses, CeLiSo,
+                            Sorbonne Université, Paris</p>
+                    </div>
+                </div>
+            </article>
+
+            <div class="flex flex-col gap-8">
+
+
+                <!-- SUBSECTION ANIMATIONS DE LA RECHERCHE -->
+                <article class="panel reveal-scroll bg-zinc-50 p-10 border border-neutral-200 shadow-xl">
+                    <h2 class="text-3xl font-academic font-bold text-neutral-900 mb-10 flex items-center gap-4">
+                        Animation de la recherche
+                        <span class="w-16 h-[2px] bg-teal-600 inline-block"></span>
+                    </h2>
+
+                    <div class="space-y-8">
+
+                        <!-- ITEM 1 : Organisation de Journées d'Études (avec occurrences datées) -->
+                        <div
+                            class="group relative pl-6 border-l-2 border-neutral-200 hover:border-teal-500 transition-colors">
+                            <div
+                                class="absolute left-[-5px] top-1.5 w-2 h-2 bg-neutral-300 group-hover:bg-teal-500 transition-colors">
+                            </div>
+                            <h3 class="font-bold font-academic text-xl text-teal-600 leading-snug mb-3">Journées
+                                d'Études</h3>
+
+                            <ul class="space-y-4 text-base text-neutral-600">
+                                <li class="flex gap-2.5">
+                                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-teal-500 flex-shrink-0"></span>
+                                    <div>
+                                        <span
+                                            class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">10/04/2026</span>
+                                        <span class="leading-relaxed"><strong
+                                                class="text-neutral-800 font-medium">Journée d'Etude
+                                                « Aux frontières de la catégorisation linguistique »; Keynote: Geoffrey
+                                                K. Pullum</strong> — création du projet, rédaction AAC, gestion du
+                                            comité
+                                            d’organisation et du comité scientifique, contact G. Pullum, demande de
+                                            financement
+                                            ALAES, réservation d’hébergement et de transport, gestion traiteur et
+                                            restaurant, réalisation
+                                            du programme, création de livrets et d’affiches, modération. <span
+                                                class="text-neutral-500 text-sm">(Sorbonne
+                                                Université)</span></span>
+                                    </div>
+                                </li>
+                                <li class="flex gap-2.5">
+                                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0"></span>
+                                    <div>
+                                        <span
+                                            class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">07/02/2024</span>
+                                        <span class="leading-relaxed"><strong
+                                                class="text-neutral-800 font-medium">Journée d'Etude des jeunes
+                                                chercheur.euses du CeLiSo</strong> — Direction du projet,
+                                            modération.<span class="text-neutral-500 text-sm">(Sorbonne
+                                                Université)</span></span>
+                                    </div>
+                                </li>
+                                <li class="flex gap-2.5">
+                                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0"></span>
+                                    <div>
+                                        <span
+                                            class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">10/06/2024</span>
+                                        <span class="leading-relaxed"><strong
+                                                class="text-neutral-800 font-medium">Journée d'Etude "Les émotions
+                                                négatives dans la langue : entre exprimer une émotion
+                                                négative et émouvoir "</strong> — Participation à l'organisation.<span
+                                                class="text-neutral-500 text-sm">(Sorbonne
+                                                Université)</span></span>
+                                    </div>
+                                </li>
+                                <li class="flex gap-2.5">
+                                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0"></span>
+                                    <div>
+                                        <span
+                                            class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">09-10/02/2024</span>
+                                        <span class="leading-relaxed"><strong
+                                                class="text-neutral-800 font-medium">Journée d'Etude des jeunes
+                                                chercheur.euses du CeLiSo</strong> — Participation à l'organisation,
+                                            modération. <span class="text-neutral-500 text-sm">(Sorbonne
+                                                Université)</span></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- ITEM 2 : Ateliers de formation & Séminaires -->
+                        <div
+                            class="group relative pl-6 border-l-2 border-neutral-200 hover:border-teal-500 transition-colors">
+                            <div
+                                class="absolute left-[-5px] top-1.5 w-2 h-2 bg-neutral-300 group-hover:bg-teal-500 transition-colors">
+                            </div>
+                            <h3 class="font-bold font-academic text-xl text-teal-600 leading-snug mb-3">Ateliers
+                                méthodologiques et Interventions</h3>
+
+                            <ul class="space-y-4 text-base text-neutral-600">
+                                <li class="flex gap-2.5">
+                                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0"></span>
+                                    <div>
+                                        <span
+                                            class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">06/11/2026</span>
+                                        <span class="leading-relaxed"><strong
+                                                class="text-neutral-800 font-medium">Atelier de formation sur Sketch
+                                                Engine, auprès des membres de l'ALAES </strong> — Présentation des
+                                            différentes fonctionnalités (Word Sketch, Word Sketch Difference,
+                                            Concordancier). Création de corpus et sous-corpus. Partage de corpus entre
+                                            usagers. Formulation de requêtes CQL, des cas les plus simples aux plus
+                                            complexes. Mode annotations. Analyses quantitatives sur Excel, calcul de la
+                                            fréquence relative et de la valeur <i>p</i>.</span>
+                                    </div>
+                                </li>
+                                <li class="flex gap-2.5">
+                                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0"></span>
+                                    <div>
+                                        <span
+                                            class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">08/10/2025
+                                            & 14/10/2026</span>
+                                        <span class="leading-relaxed"><strong
+                                                class="text-neutral-800 font-medium">Séminaire de recherche en
+                                                linguistique anglaise (Master LLCE), Formation
+                                                Corpus, Sorbonne Université</strong> — Présentation des méthodes de
+                                            travail sur corpus:
+                                            AntConc, COCA/BNC, Sketch Engine. Introduction au traitement des données :
+                                            analyse quantitative sur Excel, calcul de la fréquence relative et
+                                            de la valeur <i>p</i>.</span>
+                                    </div>
+                                </li>
+                                <li class="flex gap-2.5">
+                                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0"></span>
+                                    <div>
+                                        <span
+                                            class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">22/11/2024</span>
+                                        <span class="leading-relaxed"><strong
+                                                class="text-neutral-800 font-medium">Atelier du Collège des
+                                                Doctorant.e.s de la SAES</strong> —
+                                            Présentation du fonctionnement de l'édition scientifique en qualité de
+                                            Directrice de Publication d'ELIS.</span>
+                                    </div>
+                                </li>
+                                <li class="flex gap-2.5">
+                                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0"></span>
+                                    <div>
+                                        <span
+                                            class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">24/01/2024</span>
+                                        <span class="leading-relaxed"><strong class="text-neutral-800 font-medium">Club
+                                                Corpus du CeLiSo, Sorbonne Université</strong> —
+                                            Découvrir Sketch Engine et le CQL. Introduction à la recherche avec le
+                                            Corpus Query Language, création
+                                            d’algorithmes
+                                            complexes et mise en place de filtres de recherche.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- ITEM 3 : Comité éditorial  -->
+                        <div
+                            class="group relative pl-6 border-l-2 border-neutral-200 hover:border-teal-500 transition-colors">
+                            <div
+                                class="absolute left-[-5px] top-1.5 w-2 h-2 bg-neutral-300 group-hover:bg-teal-500 transition-colors">
+                            </div>
+                            <h3 class="font-bold font-academic text-xl text-teal-600 leading-snug mb-3">Activités
+                                éditoriales & Relecture</h3>
+
+                            <ul class="space-y-4 text-base text-neutral-600">
+                                <li class="flex gap-2.5">
+                                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0"></span>
+                                    <div>
+                                        <span
+                                            class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">2024-2025</span>
+                                        <span class="leading-relaxed">Directrice de publication – ELIS : Echanges
+                                            Linguistiques en Sorbonne, Vol.
+                                            10</span>
+                                    </div>
+                                </li>
+                                <li class="flex gap-2.5">
+                                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0"></span>
+                                    <div>
+                                        <span
+                                            class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">2023-2024</span>
+                                        <span class="leading-relaxed">Rédactrice en Chef – ELIS : Echanges Linguistiques
+                                            en Sorbonne, Vol. 9</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-zinc-50 border-t border-neutral-300 py-8 mt-auto">
+        <div
+            class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-500">
+            <p>&copy; 2026 - Juliette Cahard.</p>
+            <a href="mailto:julietteccahard@gmail.com" class="contact-btn">Me contacter</a>
+            <p class="uppercase tracking-widest text-xs">Site par LinguistCode</p>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.querySelector('header');
+        const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = () => {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.remove('is-open');
+        };
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            mobileMenu.classList.toggle('is-open', !isOpen);
+        });
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+        window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMenu(); });
+
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal-scroll').forEach(el => io.observe(el));
+
+        // Toggle & Close thesis abstract section
+        const toggleBtn = document.getElementById('toggle-abstract');
+        const closeBtn = document.getElementById('close-abstract-btn');
+        const abstractSec = document.getElementById('abstract-section');
+        const toggleText = document.getElementById('toggle-abstract-text');
+        const toggleIcon = document.getElementById('toggle-abstract-icon');
+
+        const hideAbstract = () => {
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            abstractSec.classList.add('hidden');
+            toggleText.textContent = 'Lire le résumé complet';
+            toggleIcon.style.transform = 'rotate(0deg)';
+        };
+
+        if (toggleBtn && abstractSec) {
+            toggleBtn.addEventListener('click', () => {
+                const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+                if (isExpanded) {
+                    hideAbstract();
+                } else {
+                    toggleBtn.setAttribute('aria-expanded', 'true');
+                    abstractSec.classList.remove('hidden');
+                    toggleText.textContent = 'Masquer le résumé';
+                    toggleIcon.style.transform = 'rotate(180deg)';
+                    abstractSec.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                hideAbstract();
+                toggleBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        }
+    </script>
+</body>
+
+</html>
